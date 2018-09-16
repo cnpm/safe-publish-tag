@@ -17,7 +17,10 @@
     "egg-bin": "^4.8.5",
     "egg-ci": "^1.8.0",
     "eslint": "^5.6.0",
-    "eslint-config-egg": "^7.1.0"
+    "eslint-config-egg": "^7.1.0",
+    "mocha": "^5.2.0",
+    "mocha-junit-reporter": "^1.18.0",
+    "mocha-multi": "^1.0.1"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -25,6 +28,7 @@
   "scripts": {
     "test": "npm run lint -- --fix && egg-bin pkgfiles --check && npm run test-local",
     "test-local": "egg-bin test",
+    "test-azure-pipelines": "mocha test/*.test.js -t 10000 --reporter mocha-multi --reporter-options spec=-,mocha-junit-reporter=-",
     "cov": "egg-bin cov",
     "lint": "eslint .",
     "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
