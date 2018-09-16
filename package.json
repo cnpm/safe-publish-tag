@@ -1,0 +1,54 @@
+{
+  "name": "safe-publish-tag",
+  "version": "1.0.0",
+  "description": "Get the safe publish tag when you `npm publish`",
+  "keywords": [
+    "npm",
+    "npm publish",
+    "npm-publish"
+  ],
+  "dependencies": {
+    "semver": "^5.5.1",
+    "urllib": "^2.29.1"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.0.0",
+    "egg-bin": "^4.8.5",
+    "egg-ci": "^1.8.0",
+    "eslint": "^5.6.0",
+    "eslint-config-egg": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint -- --fix && egg-bin pkgfiles --check && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
+    "pkgfiles": "egg-bin pkgfiles",
+    "autod": "autod"
+  },
+  "files": [
+    "index.js"
+  ],
+  "ci": {
+    "version": "6, 8, 10",
+    "license": {
+      "year": "2018",
+      "fullname": "cnpm and and other contributors"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnpm/safe-publish-tag.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cnpm/cnpm/issues"
+  },
+  "homepage": "https://github.com/cnpm/safe-publish-tag",
+  "author": "fengmk2",
+  "license": "MIT"
+}
