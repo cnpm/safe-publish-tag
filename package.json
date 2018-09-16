@@ -27,7 +27,7 @@
   "scripts": {
     "test": "npm run lint -- --fix && egg-bin pkgfiles --check && npm run test-local",
     "test-local": "egg-bin test",
-    "test-azure-pipelines": "egg-bin test --reporter mocha-multi --reporter-options spec=-,mocha-junit-reporter=-",
+    "test-azure-pipelines": "mocha test/*.test.js -t 10000 --reporter mocha-multi --reporter-options spec=-,mocha-junit-reporter=-",
     "cov": "egg-bin cov",
     "lint": "eslint .",
     "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
