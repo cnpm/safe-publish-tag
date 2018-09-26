@@ -14,8 +14,8 @@
   "devDependencies": {
     "autod": "^3.0.1",
     "autod-egg": "^1.0.0",
-    "egg-bin": "^4.8.5",
-    "egg-ci": "^1.8.0",
+    "egg-bin": "^4.9.0",
+    "egg-ci": "^1.9.2",
     "eslint": "^5.6.0",
     "eslint-config-egg": "^7.1.0",
     "mocha": "^5.2.0",
@@ -30,7 +30,7 @@
     "test-local": "egg-bin test",
     "test-azure-pipelines": "mocha test/*.test.js -t 10000 --reporter mocha-multi --reporter-options spec=-,mocha-junit-reporter=-",
     "cov": "egg-bin cov",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
     "pkgfiles": "egg-bin pkgfiles",
     "autod": "autod"
@@ -39,6 +39,7 @@
     "index.js"
   ],
   "ci": {
+    "type": "travis, azure-pipelines",
     "version": "6, 8, 10",
     "license": {
       "year": "2018",
