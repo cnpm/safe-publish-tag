@@ -20,6 +20,36 @@ describe('test/index.test.js', () => {
       });
   });
 
+  it('beta', () => {
+    return safePublishTag('egg', '2.28.0-beta')
+      .then(tag => {
+        assert(tag === 'beta');
+      });
+  });
+  it('alpha', () => {
+    return safePublishTag('egg', '2.28.0-alpha')
+      .then(tag => {
+        assert(tag === 'alpha');
+      });
+  });
+  it('beta', () => {
+    return safePublishTag('egg', '2.28.1-beta.0')
+      .then(tag => {
+        assert(tag === 'beta');
+      });
+  });
+  it('prerelease 0', () => {
+    return safePublishTag('egg', '2.28.0-0')
+      .then(tag => {
+        assert(tag === 'latest-2');
+      });
+  });
+  it('patch latest', () => {
+    return safePublishTag('egg', '2.28.1')
+      .then(tag => {
+        assert(tag === 'latest');
+      });
+  });
   it('should throw error when request error', () => {
     return safePublishTag('pedding-not-exists-haha', '0.0.1', {
       registry: 'https://registry-not-exists.cnpmjs.org',

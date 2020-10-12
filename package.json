@@ -40,7 +40,7 @@
   ],
   "ci": {
     "type": "travis, azure-pipelines",
-    "version": "6, 8, 10",
+    "version": "6, 8, 10, 12",
     "license": {
       "year": "2018",
       "fullname": "cnpm and and other contributors"
