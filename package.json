@@ -1,6 +1,6 @@
 {
   "name": "safe-publish-tag",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Get the safe publish tag when you `npm publish`",
   "keywords": [
     "npm",
